@@ -1,0 +1,39 @@
+<svg version="1.1" id="Layer_1"
+    xmlns:x="&amp;ns_extend;"
+    xmlns:i="&amp;ns_ai;"
+    xmlns:graph="&amp;ns_graphs;"
+    xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-208.5 21 100 100" enable-background="new -208.5 21 100 100" xml:space="preserve" fill="#000000">
+    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+    <g id="SVGRepo_iconCarrier">
+        <switch>
+            <foreignObject requiredExtensions="&amp;ns_ai;" x="0" y="0" width="1" height="1">
+                <i:pgfref xlink:href="#adobe_illustrator_pgf"></i:pgfref>
+            </foreignObject>
+            <g i:extraneous="self">
+                <circle id="Mask" fill="#f2f0ed" cx="-158.5" cy="71" r="50"></circle>
+                <g>
+                    <defs>
+                        <circle id="Mask_2_" cx="-158.5" cy="71" r="50"></circle>
+                    </defs>
+                    <clipPath id="Mask_4_">
+                        <use xlink:href="#Mask_2_" overflow="visible"></use>
+                    </clipPath>
+                    <path id="Mask_3_" clip-path="url(#Mask_4_)" fill="#cbc9c8" d="M-108.5,121v-14c0,0-21.2-4.9-28-6.7c-2.5-0.7-7-3.3-7-12 c0-1.7,0-6.3,0-6.3h-15h-15c0,0,0,4.6,0,6.3c0,8.7-4.5,11.3-7,12c-6.8,1.9-28.1,7.3-28.1,6.7v14h50.1H-108.5z"></path>
+                    <g clip-path="url(#Mask_4_)">
+                        <defs>
+                            <path id="Mask_1_" d="M-108.5,121v-14c0,0-21.2-4.9-28-6.7c-2.5-0.7-7-3.3-7-12c0-1.7,0-6.3,0-6.3h-15h-15c0,0,0,4.6,0,6.3 c0,8.7-4.5,11.3-7,12c-6.8,1.9-28.1,7.3-28.1,6.7v14h50.1H-108.5z"></path>
+                        </defs>
+                        <clipPath id="Mask_5_">
+                            <use xlink:href="#Mask_1_" overflow="visible"></use>
+                        </clipPath>
+                        <path id="head-shadow" clip-path="url(#Mask_5_)" fill="#919191" d="M-158.5,100.1c12.7,0,23-18.6,23-34.4 c0-16.2-10.3-24.7-23-24.7s-23,8.5-23,24.7C-181.5,81.5-171.2,100.1-158.5,100.1z"></path>
+                    </g>
+                </g>
+                <path id="head" fill="#d2d0d0" d="M-158.5,96c12.7,0,23-16.3,23-31c0-15.1-10.3-23-23-23s-23,7.9-23,23 C-181.5,79.7-171.2,96-158.5,96z"></path>
+            </g>
+        </switch>
+    </g>
+</svg>
