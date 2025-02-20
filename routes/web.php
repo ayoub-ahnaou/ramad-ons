@@ -8,6 +8,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, "welcome"])->name("welcome");
 
-Route::resource("publications", PublicationController::class);
-Route::resource("recipes", RecipeController::class);
-Route::resource("comments", CommentController::class);
+Route::get('publications', [PublicationController::class, 'index'])->name("publications.index");
+Route::get('publications/create', [PublicationController::class])->name('publications.create');
+Route::post('publications', [PublicationController::class, 'store'])->name('publications.store');
+Route::get('publications/{id}', [PublicationController::class, 'show'])->name('publications.show');
+Route::delete('publications/{id}', [PublicationController::class, 'destroy'])->name('publications.destroy');
+
+Route::get('recipes', [RecipeController::class, 'index'])->name('recipes.index');
+Route::get('recipes/create', [RecipeController::class])->name('recipes.create');
+Route::post('recipes', [RecipeController::class, 'store'])->name('recipes.store');
+Route::get('recipes/{id}', [RecipeController::class, 'show'])->name('recipes.show');
+Route::delete('recipes/{id}', [RecipeController::class, 'destroy'])->name('recipes.destroy');
+
+Route::get('comments/create', [CommentController::class])->name('comments.create');
+Route::post('comments', [CommentController::class, 'store'])->name('comments.store');
+Route::delete('comments/{id}', [CommentController::class, 'destroy'])->name('comments.destroy');
