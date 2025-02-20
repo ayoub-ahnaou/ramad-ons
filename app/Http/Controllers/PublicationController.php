@@ -46,7 +46,7 @@ class PublicationController extends Controller
             Publication::create($data);
 
         }
-        return back()->with('success', 'Publication created successfully!');
+        return to_route('publications.index')->with('message', 'Publications created successfully!');
     }
 
     /**
