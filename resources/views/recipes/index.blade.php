@@ -3,7 +3,28 @@
         <!-- Header -->
         <div class="mb-6">
             <h1 class="text-3xl font-bold mb-1">Recipes</h1>
-            <p class="text-gray-600 mb-2">Découvrez les meilleures recettes et astuces partagées par notre communauté.</p>
+            <p class="text-gray-600 mb-2">Découvrez les meilleures recettes et astuces partagées par notre communauté.
+            </p>
+        </div>
+
+        <div class="mb-8 flex justify-between">
+            <div class="flex flex-wrap gap-4">
+                <button class="px-4 py-2 bg-gray-600 text-white rounded-full">Tous</button>
+                <button
+                    class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full hover:bg-gray-100">Recettes</button>
+                <button class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full hover:bg-gray-100">Astuces</button>
+                <button
+                    class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full hover:bg-gray-100">Articles</button>
+            </div>
+
+            <a href="{{route('recipes.create')}}" class="flex items-center gap-1 bg-gray-50 hover:bg-gray-100 px-4 rounded-full">
+                <span class="text-sm text-gray-600">Ajouter recette</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" stroke="gray" />
+                    <path d="M12 8v8M8 12h8" stroke="gray" />
+                </svg>
+            </a>
         </div>
 
         <!-- Grid des Publications -->
@@ -11,8 +32,8 @@
             @foreach ($recipes as $recipe)
                 <article class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                     <a href="{{ route('recipes.show', $recipe->id) }}">
-                        <img src="https://www.realsimple.com/thmb/2ixrIIlE-44L1MypGHIs2TqIQYk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vegetarian-recipes-1672e2b4f9104ed3b3867a2a14889ce9.jpg"
-                            alt="Publication" class="w-full h-64 object-cover">
+                        <img src="{{ asset('storage/' . $recipe->image) }}" alt="Publication"
+                            class="w-full h-64 object-cover">
                     </a>
                     <div class="p-6">
                         <div class="flex items-center mb-4">
