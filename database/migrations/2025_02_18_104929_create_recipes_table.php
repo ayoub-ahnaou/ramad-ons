@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer("persons");
             $table->longText("ingredients");
             $table->string("image");
+            $table->enum("category", ["Entree", "Principale", "Desert"]);
             $table->timestamps();
         });
     }
