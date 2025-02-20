@@ -28,7 +28,13 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            "comment" => ["required", "string"],
+            "publication_id" => ["required", "string"]
+        ]);
+
+        Comment::create($data);
+        return back()->with("message", "commend added with succes");
     }
 
     /**
