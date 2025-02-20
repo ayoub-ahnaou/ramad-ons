@@ -26,11 +26,14 @@
 
         <div class="mb-8 flex justify-between">
             <div class="flex flex-wrap gap-4 text-xs">
-                <button class="px-4 py-2 bg-gray-600 text-white rounded-full">Tous</button>
-                <button class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full hover:bg-gray-100">Entree</button>
-                <button
-                    class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full hover:bg-gray-100">Principale</button>
-                <button class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full hover:bg-gray-100">Desert</button>
+                <a href="{{ route('recipes.index') }}"
+                    class="px-4 py-2 bg-gray-50 border rounded-full {{ request('category') == '' ? 'bg-gray-600 text-white' : '' }}">Tous</a>
+                <a href="{{ route('recipes.index', ['category' => 'Entree']) }}"
+                    class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full {{ request('category') == 'Entree' ? 'bg-gray-600 text-white hover:bg-black' : 'hover:bg-gray-100' }}">Entree</a>
+                <a href="{{ route('recipes.index', ['category' => 'Principale']) }}"
+                    class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full {{ request('category') == 'Principale' ? 'bg-gray-600 text-white hover:bg-black' : 'hover:bg-gray-100' }}">Principale</a>
+                <a href="{{ route('recipes.index', ['category' => 'Desert']) }}"
+                    class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full {{ request('category') == 'Desert' ? 'bg-gray-600 text-white hover:bg-black' : 'hover:bg-gray-100' }}">Desert</a>
             </div>
 
             <a href="{{ route('recipes.create') }}"
