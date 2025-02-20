@@ -1,10 +1,28 @@
 <x-layout>
     <main class="container mx-auto py-12">
+        @if (session('message'))
+            <div id="toast"
+                class="flex items-center gap-2 absolute top-12 right-0 pr-40 bg-green-100 text-green-700 rounded-md p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" stroke="green" />
+                    <path d="M9 12l2 2 4-4" stroke="green" />
+                </svg>
+                {{ session('message') }}
+            </div>
+        @endif
+        <script>
+            setTimeout(() => {
+                document.getElementById("toast").style.display = "none";
+            }, 2000);
+        </script>
+
         <!-- Header -->
         <div class="mb-12 flex justify-between">
             <div class="">
                 <h1 class="text-3xl font-bold mb-4">Communauté</h1>
-                <p class="text-gray-600">Découvrez les meilleures recettes et astuces partagées par notre communauté.</p>
+                <p class="text-gray-600">Découvrez les meilleures recettes et astuces partagées par notre communauté.
+                </p>
             </div>
 
             <a href="{{ route('publications.create') }}"
@@ -24,8 +42,8 @@
             @foreach ($publications as $pub)
                 <article class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow flex">
                     <a href="{{ route('publications.show', $pub->id) }}">
-                        <img src="https://searchengineland.com/wp-content/seloads/2014/08/photos-images-pictures-ss-1920.jpg"
-                            alt="Publication" class="w-full h-36 object-cover">
+                        <img src="{{ asset('storage/' . $pub->image) }}" alt="Publication"
+                            class="w-full h-36 object-cover">
                     </a>
                     <div class="px-4">
                         <div class="flex items-center pt-1 pb-2">
