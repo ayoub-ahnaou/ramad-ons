@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Publication;
 use Illuminate\Http\Request;
 use Symfony\Component\VarDumper\VarDumper;
@@ -13,7 +14,8 @@ class PublicationController extends Controller
      */
     public function index()
     {
-        return view("publications.index");
+        $publications = Publication::query()->orderBy('created_at', 'desc')->get();
+        return view("publications.index", compact("publications"));
     }
 
     /**
@@ -29,7 +31,22 @@ class PublicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => ['string', 'required', 'max:50'],
+            'content' => ['string', 'required'],
+            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048']
+        ]);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+
+            $imagePath = $image->store('images', 'public'); // 'images' is the folder, 'public' is the disk
+            $data['image'] = $imagePath;
+
+            Publication::create($data);
+
+        }
+        return back()->with('success', 'Publication created successfully!');
     }
 
     /**
@@ -37,7 +54,9 @@ class PublicationController extends Controller
      */
     public function show(string $id)
     {
-        return view("publications.show");
+        $publication = Publication::query()->find($id);
+        $comments = Comment::where('publication_id', $id)->orderBy('created_at', 'desc')->get();
+        return view("publications.show", compact("publication", "comments"));
     }
 
     /**
