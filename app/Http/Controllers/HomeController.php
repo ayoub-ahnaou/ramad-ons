@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Publication;
+use App\Models\Recipe;
 
 class HomeController extends Controller
 {
     public function welcome()
     {
-        return view("welcome");
+        $topThreeRecipes = Recipe::query()->orderBy("created_at", 'desc')->limit(3)->get();
+        $topThreePublications = Publication::query()->orderBy("created_at", 'desc')->limit(3)->get();
+        return view("welcome", compact("topThreeRecipes", "topThreePublications"));
     }
 }
