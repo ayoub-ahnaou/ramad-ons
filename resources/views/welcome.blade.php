@@ -33,16 +33,15 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    @for ($i = 0; $i < 3; $i++)
-                        <a href="recipe-detail.html" class="block">
+                    @foreach ($topThreeRecipes as $recipe)
+                        <a href="{{ route('recipes.show', $recipe->id) }}" class="block">
                             <div class="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                                <img src="https://www.realsimple.com/thmb/2ixrIIlE-44L1MypGHIs2TqIQYk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vegetarian-recipes-1672e2b4f9104ed3b3867a2a14889ce9.jpg"
+                                <img src="{{ asset('storage/' . $recipe->image)}}"
                                     alt="Recipe" class="w-full h-48 object-cover">
                                 <div class="p-4">
-                                    <h3 class="font-semibold text-lg mb-2">Chorba Traditionnelle</h3>
-                                    <p class="text-gray-600 text-sm mb-4">Une soupe traditionnelle parfaite pour
-                                        l'iftar.
-                                    </p>
+                                    <h3 class="font-semibold text-lg mb-2">{{ $recipe->title }}</h3>
+                                    <p class="text-gray-600 text-sm mb-4">
+                                        {{ Str::limit($recipe->description, 50, '...') }}</p>
                                     <div class="flex items-center text-sm text-gray-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 24 24"
                                             fill="none" stroke="currentColor">
@@ -50,12 +49,12 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M12 6v6l4 2" />
                                         </svg>
-                                        <span>45 mins</span>
+                                        <span>{{ $recipe->time->diff(now())->format('%h hours %i min') }}</span>
                                     </div>
                                 </div>
                             </div>
                         </a>
-                    @endfor
+                    @endforeach
                     <!-- Répéter pour autres recettes -->
                 </div>
             </div>
@@ -77,35 +76,33 @@
 
                 <div class="flex flex-col gap-6">
                     <!-- Publication Card -->
-                    @for ($i = 0; $i < 3; $i++)
+                    @foreach ($topThreePublications as $pub)
                         <article
                             class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow flex">
-                            <a href="publication-detail.html">
-                                <img src="https://searchengineland.com/wp-content/seloads/2014/08/photos-images-pictures-ss-1920.jpg"
+                            <a href="{{ route('publications.show', $pub->id) }}">
+                                <img src="{{ asset('storage/' . $pub->image)}}"
                                     alt="Publication" class="w-full h-36 object-cover">
                             </a>
                             <div class="px-4">
                                 <div class="flex items-center pt-1 pb-2">
-                                    <img src="https://www.danspapers.com/wp-content/uploads/2020/11/Guestworthy-Amira-Gharib-copy.jpg"
+                                    <img src="{{ URL('/assets/icons/user.svg') }}"
                                         alt="User" class="w-10 h-10 rounded-full mr-3 object-cover">
                                     <div>
-                                        <h4 class="font-semibold">Sarah Ahmed</h4>
-                                        <p class="text-sm text-gray-500">Il y a 2 jours</p>
+                                        <h4 class="font-semibold">Anonymos</h4>
+                                        <p class="text-sm text-gray-500">{{ $pub->created_at->diffForHumans() }}</p>
                                     </div>
                                 </div>
-                                <a href="publication-detail.html">
-                                    <h3 class="font-semibold text-xl mb-1">Secrets pour des Samosas Croustillants</h3>
+                                <a href="{{ route('publications.show', $pub->id) }}">
+                                    <h3 class="font-semibold text-xl mb-1">{{ $pub->title }}</h3>
                                 </a>
-                                <p class="text-gray-600 mb-1">Découvrez mes astuces pour réussir des samosas
-                                    parfaitement
-                                    croustillants à chaque fois...</p>
+                                <p class="text-gray-600 mb-1">{{ Str::limit($pub->title, 50, '...') }}</p>
                                 <div class="flex items-center justify-between text-sm text-gray-500">
                                     <div class="flex items-center space-x-4">
                                     </div>
                                 </div>
                             </div>
                         </article>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
         </section>
