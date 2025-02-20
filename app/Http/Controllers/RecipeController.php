@@ -46,8 +46,8 @@ class RecipeController extends Controller
             $data['image'] = $imagePath;
 
             Recipe::create($data);
-            return to_route('recipes.index')->with('success', 'Recipe created successfully!');
         }
+        return to_route('recipes.index')->with('message', 'Recipe created successfully!');
     }
 
     /**
