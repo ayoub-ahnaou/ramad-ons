@@ -36,8 +36,8 @@
                     @foreach ($topThreeRecipes as $recipe)
                         <a href="{{ route('recipes.show', $recipe->id) }}" class="block">
                             <div class="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                                <img src="{{ asset('storage/' . $recipe->image)}}"
-                                    alt="Recipe" class="w-full h-48 object-cover">
+                                <img src="{{ asset('storage/' . $recipe->image) }}" alt="Recipe"
+                                    class="w-full h-48 object-cover">
                                 <div class="p-4">
                                     <h3 class="font-semibold text-lg mb-2">{{ $recipe->title }}</h3>
                                     <p class="text-gray-600 text-sm mb-4">
@@ -80,13 +80,13 @@
                         <article
                             class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow flex">
                             <a href="{{ route('publications.show', $pub->id) }}">
-                                <img src="{{ asset('storage/' . $pub->image)}}"
-                                    alt="Publication" class="w-full h-36 object-cover">
+                                <img src="{{ asset('storage/' . $pub->image) }}" alt="Publication"
+                                    class="w-full h-36 object-cover">
                             </a>
                             <div class="px-4">
                                 <div class="flex items-center pt-1 pb-2">
-                                    <img src="{{ URL('/assets/icons/user.svg') }}"
-                                        alt="User" class="w-10 h-10 rounded-full mr-3 object-cover">
+                                    <img src="{{ URL('/assets/icons/user.svg') }}" alt="User"
+                                        class="w-10 h-10 rounded-full mr-3 object-cover">
                                     <div>
                                         <h4 class="font-semibold">Anonymos</h4>
                                         <p class="text-sm text-gray-500">{{ $pub->created_at->diffForHumans() }}</p>
@@ -106,6 +106,20 @@
                 </div>
             </div>
         </section>
+        <section class="bg-white py-16 flex flex-col container mx-auto gap-8">
+            <h1 class="text-2xl font-bold">Number speaks louder than words!</h1>
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-2">
+                    <span
+                        class="bg-black text-white h-8 w-8 flex items-center justify-center">{{ $nbrePublications }}</span>
+                    <span class="text-lg">New <b>Publications</b> To Disguse</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span
+                        class="bg-black text-white h-8 w-8 flex items-center justify-center">{{ $nbreRecipes }}</span>
+                    <span class="text-lg">Freshs <b>Recettes</b> For Your Days Routine</span>
+                </div>
+            </div>
+        </section>
     </div>
-    <div class="bg-white h-12 border-y"></div>
 </x-layout>
