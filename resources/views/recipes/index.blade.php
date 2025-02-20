@@ -16,7 +16,7 @@
                 document.getElementById("toast").style.display = "none";
             }, 2000);
         </script>
-        
+
         <!-- Header -->
         <div class="mb-6">
             <h1 class="text-3xl font-bold mb-1">Recipes</h1>
@@ -25,19 +25,17 @@
         </div>
 
         <div class="mb-8 flex justify-between">
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-wrap gap-4 text-xs">
                 <button class="px-4 py-2 bg-gray-600 text-white rounded-full">Tous</button>
+                <button class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full hover:bg-gray-100">Entree</button>
                 <button
-                    class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full hover:bg-gray-100">Recettes</button>
-                <button
-                    class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full hover:bg-gray-100">Astuces</button>
-                <button
-                    class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full hover:bg-gray-100">Articles</button>
+                    class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full hover:bg-gray-100">Principale</button>
+                <button class="px-4 py-2 bg-gray-50 border text-gray-600 rounded-full hover:bg-gray-100">Desert</button>
             </div>
 
             <a href="{{ route('recipes.create') }}"
                 class="flex items-center gap-1 bg-gray-50 hover:bg-gray-100 px-4 rounded-full">
-                <span class="text-sm text-gray-600">Ajouter recette</span>
+                <span class="text-xs text-gray-600">Ajouter recette</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10" stroke="gray" />
