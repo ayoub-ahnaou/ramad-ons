@@ -11,6 +11,8 @@ class HomeController extends Controller
     {
         $topThreeRecipes = Recipe::query()->orderBy("created_at", 'desc')->limit(3)->get();
         $topThreePublications = Publication::query()->orderBy("created_at", 'desc')->limit(3)->get();
-        return view("welcome", compact("topThreeRecipes", "topThreePublications"));
+        $nbrePublications = Publication::query()->count();
+        $nbreRecipes = Recipe::query()->count();
+        return view("welcome", compact("topThreeRecipes", "topThreePublications", "nbrePublications", "nbreRecipes"));
     }
 }
