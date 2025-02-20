@@ -1,7 +1,5 @@
 <x-layout>
     <div class="max-w-4xl mx-auto px-4 py-8 my-12 shadow bg-white">
-        {{-- <h1 class="text-2xl font-bold text-gray-900 mb-8">Ajouter une nouvelle recette</h1> --}}
-
         <form class="bg-white space-y-6" action="{{route('recipes.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div>
