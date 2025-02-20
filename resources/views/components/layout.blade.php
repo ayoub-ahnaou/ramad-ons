@@ -12,33 +12,36 @@
 
 <body>
     <div class="flex flex-col justify-between min-h-screen">
-        <nav class="h-8 w-full bg-gray-100 px-8 text-gray-600">
+        <nav class="h-8 w-full bg-gray-100 px-8 text-gray-600 sticky z-50 top-0 shadow-md">
             <div class="container mx-auto flex justify-between h-full items-center">
-                <div class="flex items-center gap-1">
+                <a href="{{ route('welcome') }}" class="flex items-center gap-1">
                     <img src="{{ URL('/assets/icons/img.svg') }}" class="size-5" alt="">
                     <span class="font-medium">ramad-on</span>
-                </div>
+                </a>
 
                 <ul class="text-sm flex items-center h-full">
-                    <li class="flex items-center gap-1 hover:bg-gray-200 h-full px-4 cursor-pointer">
+                    <a href="{{ route('welcome') }}"
+                        class="flex items-center gap-1 hover:bg-gray-200 h-full px-4 cursor-pointer">
                         {{-- <img src="{{URL('/assets/icons/profile.svg')}}" class="size-5" alt=""> --}}
                         <span class="font-medium">Home</span>
-                    </li>
-                    <li class="flex items-center gap-1 hover:bg-gray-200 h-full px-4 cursor-pointer">
+                    </a>
+                    <a href="{{ route('recipes.index') }}"
+                        class="flex items-center gap-1 hover:bg-gray-200 h-full px-4 cursor-pointer">
                         <!-- <img src="./imgs/profile.svg" class="size-5" alt=""> -->
                         <span class="font-medium">Recipes</span>
-                    </li>
-                    <li class="flex items-center gap-1 hover:bg-gray-200 h-full px-4 cursor-pointer">
+                    </a>
+                    <a href="{{ route('publications.index') }}"
+                        class="flex items-center gap-1 hover:bg-gray-200 h-full px-4 cursor-pointer">
                         <!-- <img src="./imgs/profile.svg" class="size-5" alt=""> -->
                         <span class="font-medium">Publications</span>
-                    </li>
-                    <li class="flex items-center gap-1 hover:bg-gray-200 h-full px-2 cursor-pointer">
+                    </a>
+                    <a class="flex items-center gap-1 hover:bg-gray-200 h-full px-2 cursor-pointer">
                         <img src="{{ URL('/assets/icons/profile.svg') }}" class="size-5" alt="">
                         <!-- <span class="font-medium">Login</span> -->
-                    </li>
-                    <li class="flex items-center gap-1 hover:bg-gray-200 h-full px-2 cursor-pointer">
+                    </a>
+                    <a class="flex items-center gap-1 hover:bg-gray-200 h-full px-2 cursor-pointer">
                         <img src="{{ URL('/assets/icons/logout.svg') }}" class="size-5" alt="">
-                    </li>
+                    </a>
                 </ul>
             </div>
         </nav>
@@ -47,12 +50,12 @@
             {{ $slot }}
         </div>
 
-        <footer class="bg-gray-50 text-gray-600 py-16">
+        <footer class="bg-gray-50 text-gray-600 py-16 text-xs">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                     <div>
                         <div class="flex items-center space-x-2 mb-6">
-                            <img src="{{URL('/assets/icons/img.svg')}}" alt="Ramad-on logo" class="h-8 w-8">
+                            <img src="{{ URL('/assets/icons/img.svg') }}" alt="Ramad-on logo" class="h-8 w-8">
                             <span class="text-xl font-semibold">ramad-on</span>
                         </div>
                         <p class="text-gray-400">Connecter les communautés à travers le partage des recettes
@@ -62,20 +65,20 @@
                     <div>
                         <h4 class="font-semibold mb-4">Liens Rapides</h4>
                         <ul class="space-y-2 text-gray-400">
-                            <li><a href="#" class="hover:text-white">À Propos</a></li>
-                            <li><a href="#" class="hover:text-white">Contact</a></li>
-                            <li><a href="#" class="hover:text-white">Conditions d'Utilisation</a></li>
-                            <li><a href="#" class="hover:text-white">Politique de Confidentialité</a></li>
+                            <li><a href="#" class="hover:text-gray-600">À Propos</a></li>
+                            <li><a href="#" class="hover:text-gray-600">Contact</a></li>
+                            <li><a href="#" class="hover:text-gray-600">Conditions d'Utilisation</a></li>
+                            <li><a href="#" class="hover:text-gray-600">Politique de Confidentialité</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 class="font-semibold mb-4">Catégories</h4>
                         <ul class="space-y-2 text-gray-400">
-                            <li><a href="#" class="hover:text-white">Recettes Iftar</a></li>
-                            <li><a href="#" class="hover:text-white">Recettes Suhoor</a></li>
-                            <li><a href="#" class="hover:text-white">Desserts</a></li>
-                            <li><a href="#" class="hover:text-white">Boissons</a></li>
+                            <li><a href="#" class="hover:text-gray-600">Recettes Iftar</a></li>
+                            <li><a href="#" class="hover:text-gray-600">Recettes Suhoor</a></li>
+                            <li><a href="#" class="hover:text-gray-600">Desserts</a></li>
+                            <li><a href="#" class="hover:text-gray-600">Boissons</a></li>
                         </ul>
                     </div>
 
