@@ -50,7 +50,7 @@
                             <img src="{{ URL('/assets/icons/user.svg') }}" alt="User"
                                 class="w-10 h-10 rounded-full mr-3 object-cover">
                             <div>
-                                <h4 class="font-semibold">Sarah Ahmed</h4>
+                                <h4 class="font-semibold">Anonymos</h4>
                                 <p class="text-sm text-gray-500"> {{ $pub->created_at->diffForHumans() }} </p>
                             </div>
                         </div>
