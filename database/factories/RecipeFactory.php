@@ -17,12 +17,13 @@ class RecipeFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(3), // Titre aléatoire
-            'description' => fake()->paragraph(4), // Description aléatoire
-            'time' => fake()->time(), // Heure au format HH:MM:SS
-            'persons' => fake()->numberBetween(1, 10), // Nombre de personnes
-            'ingredients' => fake()->paragraph(2), // Liste d'ingrédients fictive
-            'image' => fake()->imageUrl(640, 480, 'food', true, 'Recipe'), // URL d'image fictive
+            'title' => fake()->sentence(3),
+            'description' => fake()->paragraph(4),
+            'time' => fake()->time(),
+            'persons' => fake()->numberBetween(1, 10),
+            'ingredients' => fake()->paragraph(2),
+            'image' => fake()->imageUrl(640, 480, 'food', true, 'Recipe'),
+            'category' => fake()->randomElement(["Entree", "Principale", "Desert"]),
         ];
     }
 }
