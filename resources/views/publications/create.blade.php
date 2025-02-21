@@ -9,7 +9,10 @@
                 </label>
                 <input type="text" id="title" name="title"
                     class="text-gray-700 mt-1 block bg-gray-50 p-1 px-2 w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500"
-                    placeholder="Enter publication title" />
+                    placeholder="Enter publication title" value="{{ old('title') }}" />
+                @error('title')
+                    <p class="text-red-600 bg-red-50 px-1">Title field is required</p>
+                @enderror
             </div>
 
             <div>
@@ -18,7 +21,10 @@
                 </label>
                 <textarea id="content" rows="3" name="content"
                     class="text-gray-700 mt-1 block bg-gray-50 p-1 px-2 w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500"
-                    placeholder="Write your publication content..."></textarea>
+                    placeholder="Write your publication content...">{{ old('content') }}</textarea>
+                @error('content')
+                    <p class="text-red-600 bg-red-50 px-1">Description field is required</p>
+                @enderror
             </div>
 
             <div>
@@ -46,6 +52,9 @@
                         <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
                     </div>
                 </div>
+                @error('image')
+                    <p class="text-red-600 bg-red-50 px-1">Something went wrong while uploading image, try again</p>
+                @enderror
             </div>
 
             <div class="flex justify-end space-x-4">
